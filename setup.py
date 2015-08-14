@@ -74,4 +74,9 @@ setup(
         "gevent",
         "redis"
     ],
+
+    tests_require = [
+        "httmock",
+        "freezegun"
+    ],
 )
