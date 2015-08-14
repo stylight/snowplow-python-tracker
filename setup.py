@@ -79,4 +79,6 @@ setup(
         "httmock",
         "freezegun"
     ],
+
+    test_suite = "test"
 )
