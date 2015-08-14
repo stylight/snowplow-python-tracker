@@ -9,6 +9,8 @@ python:
   - "3.3"
 # command to install dependencies
 install:
+  - "pip install httmock"
+  - "pip install freezegun"
   - python setup.py install
 # command to run tests
 script:
