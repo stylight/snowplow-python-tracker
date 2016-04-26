@@ -139,9 +139,12 @@ class Emitter(object):
         """
         with self.lock:
             if self.method == "post":
-                self.buffer.append(
-                    {key: str(payload[key]) for key in payload
-                    if not isinstance(payload[key], unicode)})
+                items = {key: payload[key] for key in payload}
+                for k in items.keys():
+                    if not isinstance(items[k], unicode):
+                        items[k] = str(items[k])
+
+                self.buffer.append(items)
             else:
                 self.buffer.append(payload)
 
